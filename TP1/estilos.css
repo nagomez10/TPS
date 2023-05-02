@@ -1,0 +1,111 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    min-height: 100%;
+}
+
+/* div {
+    min-height: 100%;
+} */
+
+.grid-container > * {
+    box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 4px;
+    padding: 10;
+    text-align: center;
+}
+
+.header{
+    grid-area: header;
+    background-color: rgb(255, 127, 127);
+}
+
+.navbar{
+    text-align: center;
+    grid-area: navbar;
+    background-color: rgb(127, 255, 138);
+    
+}
+        .navbar {
+            background-color: #333; /* color de fondo de la barra de navegación */
+        }
+    
+        .navbar a {
+            color: #ffffff; /* color del texto de los enlaces */
+            padding: 0px;
+            text-decoration: none; /* quitamos el subrayado de los enlaces */
+        }
+    
+    .navbar a:hover {
+        background-color: #555; /* color de fondo de los enlaces al pasar el mouse */
+    }
+    
+.aside{
+    grid-area: aside;
+    background-color: rgb(127, 255, 133);
+}
+
+.menu{
+    grid-area: article;
+    background-color: rgb(127, 136, 255);
+}
+
+.footer{
+    grid-area: footer;
+    background-color: rgb(255, 127, 217);
+}
+
+/* Diseño para pantalla celular */
+.grid-container{
+    display: grid;
+    gap: 10px;
+    grid-template: 
+    "header"       100px
+    "navbar"       50px
+    "aside"        50px
+    "article"      auto
+    "footer"       100px;
+}
+
+/* Diseño para pantalla tablet */
+@media (min-width:600px) {
+    .grid-container{
+        grid-template: 
+            "header header"     100px  
+            "navbar navbar"     100px
+            "aside  article"    auto
+            "footer footer"     100px /
+             200px  auto; 
+    .navbar{
+        text-align:justify;
+    }
+   
+}
+
+
+/* Diseño para pantalla monitor */
+@media (min-width:900px) {
+    .grid-container{
+        grid-template: 
+            "header header header"     100px       
+            "navbar article aside"    auto
+            "footer footer footer"     100% /
+             200px  auto 200px; 
+    .navbar{
+        text-align:justify;
+    }
+   
+}
+.derechos{
+    text-align: center;
+    color: aqua;
+}
+}
