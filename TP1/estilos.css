@@ -97,7 +97,7 @@ body{
         grid-template: 
             "header header header"     100px       
             "navbar article aside"    auto
-            "footer footer footer"     100% /
+            "footer footer footer"     100px /
              200px  auto 200px; 
     .navbar{
         text-align:justify;

@@ -4,23 +4,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Favicon</title>
+    <link rel="icon" href="Imagenes/leon.ico">
+    <link rel="stylesheet" href="estilos.css">
 </head>
+
 <body>
-    <form action="mostrar_datos.html" method="get" target="_blank">
-        <label for="n">Nombre:</label> <input type="text" name="nombre" id="n" maxlength="12" placeholder="Nombre">
-        <br><br>
-        <label for="t">Telefono:</label> <input type="tel" name="telefono" id="t" value="011-" aria-valuemax="12">
-        <br><br>
-        <label for="edad">Edad:</label> <input type="number" name="edad_usuario" id="edad">
-        <br><br>
-        <label for="fe">Fecha de nacimiento: </label> <input type="date" name="fecha_nac" id="fe">
-        <br><br>
-        <label for="c">Comentario: </label> <br> <textarea name="comentario" id="c" cols="30" rows="10"></textarea>
-        <br><br>
-        <input type="submit" value="Enviar">
-        <input type="reset" value="Limpiar formulario">
+    <!-- div principal donde pongo un header dentro del el un nav -->
+    <!-- La idea sería tener una el index.html y tres secciones que vayan cambiando en el menu para tener las 4 html que exigen! -->
+<div class="grid-container">
+    <header class="header">HEADER
+       <h1 style="text-align: center;"> TITULO CENTRAL</h1>
+    </header>
+
+    <nav class="navbar">
+        <a href="index.html"> Inicio </a>
+        <a href="sobrenosotros.html"> Sobre nosotros </a>
+        <a href="contacto.html"> Contacto </a>
+
+    </nav>
     
-    </form>
+        <article class="menu">MENU
+            <h3>Seccion principal</h3>
+            <form action="mostrar_datos.html" method="get" target="_blank">
+                <label for="n">Nombre:</label> <input type="text" name="nombre" id="n" maxlength="12" placeholder="Nombre">
+                <br><br>
+                <label for="t">Telefono:</label> <input type="tel" name="telefono" id="t" value="011-" aria-valuemax="12">
+                <br><br>
+                <label for="edad">Edad:</label> <input type="number" name="edad_usuario" id="edad">
+                <br><br>
+                <label for="fe">Fecha de nacimiento: </label> <input type="date" name="fecha_nac" id="fe">
+                <br><br>
+                <label for="c">Comentario: </label> <br> <textarea name="comentario" id="c" cols="30" rows="10"></textarea>
+                <br><br>
+                <input type="submit" value="Enviar">
+                <input type="reset" value="Limpiar formulario">
+            
+            </form>
+        </article>
+
+        <aside class="aside">
+            ASIDE
+            
+        </aside>
+    
+    <footer class="footer"> FOOTER
+        <p class="derechos">Derechos reservados @2023</p> 
+    </footer>
+</div>
 </body>
+
 </html>
