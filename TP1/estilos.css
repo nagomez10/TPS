@@ -1,111 +1,202 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-html{
-    height: 100%;
+html {
+  height: 100%;
 }
 
-body{
-    min-height: 100%;
+body {
+  min-height: 100%;
 }
 
 /* div {
     min-height: 100%;
 } */
 
+/* Estilo del formulario */
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input[type="text"].error {
+  border-color: #f44336;
+}
+
+.error-message {
+  color: #f44336;
+  margin-top: 5px;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
 .grid-container > * {
-    box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
-    border-radius: 4px;
-    padding: 10;
-    text-align: center;
+  box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 4px;
+  padding: 10;
+  text-align: center;
 }
 
-.header{
-    grid-area: header;
-    background-color: rgb(255, 127, 127);
+.header {
+  grid-area: header;
+  background-color: rgb(255, 127, 127);
 }
 
-.navbar{
-    text-align: center;
-    grid-area: navbar;
-    background-color: rgb(127, 255, 138);
-    
-}
-        .navbar {
-            background-color: #333; /* color de fondo de la barra de navegación */
-        }
-    
-        .navbar a {
-            color: #ffffff; /* color del texto de los enlaces */
-            padding: 0px;
-            text-decoration: none; /* quitamos el subrayado de los enlaces */
-        }
-    
-    .navbar a:hover {
-        background-color: #555; /* color de fondo de los enlaces al pasar el mouse */
-    }
-    
-.aside{
-    grid-area: aside;
-    background-color: rgb(127, 255, 133);
+.navbar {
+  text-align: center;
+  grid-area: navbar;
+  background-color: rgb(127, 255, 138);
 }
 
-.menu{
-    grid-area: article;
-    background-color: rgb(127, 136, 255);
+.navbar {
+  background-color: #333;
+  /* color de fondo de la barra de navegación */
 }
 
-.footer{
-    grid-area: footer;
-    background-color: rgb(255, 127, 217);
+.navbar a {
+  color: #ffffff;
+  /* color del texto de los enlaces */
+  padding: 0px;
+  text-decoration: none;
+  /* quitamos el subrayado de los enlaces */
+}
+
+.navbar a:hover {
+  background-color: #555;
+  /* color de fondo de los enlaces al pasar el mouse */
+}
+
+.aside {
+  grid-area: aside;
+  background-color: rgb(127, 255, 133);
+}
+
+.menu {
+  grid-area: article;
+  background-color: rgb(127, 136, 255);
+}
+
+.footer {
+  grid-area: footer;
+  background-color: rgb(255, 127, 217);
 }
 
 /* Diseño para pantalla celular */
-.grid-container{
-    display: grid;
-    gap: 10px;
-    grid-template: 
-    "header"       100px
-    "navbar"       50px
-    "aside"        50px
-    "article"      auto
-    "footer"       100px;
+.grid-container {
+  display: grid;
+  gap: 10px;
+  grid-template:
+    "header" 100px
+    "navbar" 50px
+    "aside" 50px
+    "article" auto
+    "footer" auto;
 }
 
 /* Diseño para pantalla tablet */
-@media (min-width:600px) {
-    .grid-container{
-        grid-template: 
-            "header header"     100px  
-            "navbar navbar"     100px
-            "aside  article"    auto
-            "footer footer"     100px /
-             200px  auto; 
-    .navbar{
-        text-align:justify;
-    }
-   
-}
+@media (min-width: 600px) {
+  .grid-container {
+    grid-template:
+      "header header" 100px "navbar navbar" 100px
+      "aside  article" auto
+      "footer footer" auto /
+      200px auto;
 
-
-/* Diseño para pantalla monitor */
-@media (min-width:900px) {
-    .grid-container{
-        grid-template: 
-            "header header header"     100px       
-            "navbar article aside"    auto
-            "footer footer footer"     100px /
-             200px  auto 200px; 
-    .navbar{
-        text-align:justify;
+    .navbar {
+      text-align: justify;
     }
-   
-}
-.derechos{
+  }
+
+  /* Diseño para pantalla monitor */
+  @media (min-width: 900px) {
+    .grid-container {
+      grid-template:
+        "header header header" 100px "navbar article aside" auto
+        "footer footer footer" auto/
+        200px auto 200px;
+
+      .navbar {
+        text-align: justify;
+      }
+    }
+
+    .derechos {
+      text-align: center;
+      color: aqua;
+    }
+  }
+
+  /* Estilos generales del footer */
+  footer {
+    background-color: #f5f5f5;
+    padding: 20px;
+    color: #555;
+  }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+  }
+
+  .footer-column {
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    color: #333;
+    font-size: 18px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  ul li {
+    margin-bottom: 5px;
+  }
+
+  a {
+    color: #555;
+    text-decoration: none;
+  }
+
+  .footer-bottom {
+    margin-top: 20px;
     text-align: center;
-    color: aqua;
-}
+    color: #888;
+  }
+
+  /* Media queries para responsive */
+  /* @media screen and (max-width: 768px) {
+        .footer-content {
+            grid-template-columns: 1fr;
+        } */
 }
