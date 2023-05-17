@@ -15,6 +15,12 @@ body {
 /* div {
     min-height: 100%;
 } */
+h1 {
+  text-align: center;
+  font-family: lato;
+  margin: 20px 20px;
+  font-size: 1.8rem;
+}
 
 /* Estilo del formulario */
 .form-group {
@@ -98,8 +104,8 @@ button:hover {
 }
 
 .menu {
-  grid-area: article;
-  background-color: rgb(127, 136, 255);
+  grid-area: section;
+  background-color: none;
 }
 
 .footer {
@@ -115,16 +121,16 @@ button:hover {
     "header" 100px
     "navbar" 50px
     "aside" 50px
-    "article" auto
+    "section" auto
     "footer" auto;
 }
 
 /* Diseño para pantalla tablet */
-@media (min-width: 600px) {
+@media (min-width: 500px) and (max-width: 890px) {
   .grid-container {
     grid-template:
       "header header" 100px "navbar navbar" 100px
-      "aside  article" auto
+      "aside  section" auto
       "footer footer" auto /
       200px auto;
 
@@ -132,71 +138,127 @@ button:hover {
       text-align: justify;
     }
   }
+}
+/* Diseño para pantalla monitor */
+@media (min-width: 900px) {
+  .grid-container {
+    grid-template:
+      "header header header" 100px "navbar article aside" auto
+      "footer footer footer" auto/
+      200px auto 200px;
 
-  /* Diseño para pantalla monitor */
-  @media (min-width: 900px) {
-    .grid-container {
-      grid-template:
-        "header header header" 100px "navbar article aside" auto
-        "footer footer footer" auto/
-        200px auto 200px;
-
-      .navbar {
-        text-align: justify;
-      }
-    }
-
-    .derechos {
-      text-align: center;
-      color: aqua;
+    .navbar {
+      text-align: justify;
     }
   }
+}
 
-  /* Estilos generales del footer */
-  footer {
-    background-color: #f5f5f5;
-    padding: 20px;
-    color: #555;
+.derechos {
+  text-align: center;
+  color: aqua;
+}
+
+.galleria-slider {
+  width: 100%;
+  max-width: 1000px;
+  /* Ajusta el ancho máximo según tus necesidades */
+  margin: 0 auto;
+}
+
+.galeria-slider .slider {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.galeria-slider .slider-envoltura {
+  display: flex;
+  width: 500%;
+  /* Ajusta el ancho según la cantidad de imágenes */
+  transition: transform 5s ease-in-out;
+  animation: slide 15s infinite;
+}
+
+.galeria-slider .deslizar-img {
+  width: 20%;
+  /* Ajusta el ancho según la cantidad de imágenes */
+}
+
+.galeria-slider .deslizar-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.galeria-slider .slider-envoltura img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
   }
 
-  .footer-content {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
+  20% {
+    transform: translateX(-20%);
   }
 
-  .footer-column {
-    margin-bottom: 20px;
+  40% {
+    transform: translateX(-40%);
   }
 
-  h3 {
-    color: #333;
-    font-size: 18px;
+  60% {
+    transform: translateX(-60%);
   }
 
-  ul {
-    list-style: none;
-    padding: 0;
+  80% {
+    transform: translateX(-80%);
   }
 
-  ul li {
-    margin-bottom: 5px;
+  100% {
+    transform: translateX(-80%);
   }
+}
 
-  a {
-    color: #555;
-    text-decoration: none;
-  }
+footer {
+  background-color: #f5f5f5;
+  padding: 20px;
+  color: #555;
+}
 
-  .footer-bottom {
-    margin-top: 20px;
-    text-align: center;
-    color: #888;
-  }
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
 
-  /* Media queries para responsive */
-  /* @media screen and (max-width: 768px) {
-        .footer-content {
-            grid-template-columns: 1fr;
-        } */
+.footer-column {
+  margin-bottom: 20px;
+}
+
+h3 {
+  color: #333;
+  font-size: 18px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 5px;
+}
+
+a {
+  color: #555;
+  text-decoration: none;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  text-align: center;
+  color: #888;
 }
